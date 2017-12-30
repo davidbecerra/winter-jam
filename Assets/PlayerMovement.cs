@@ -28,11 +28,13 @@ public class PlayerMovement : MonoBehaviour {
     private bool isDashing = false;
     private int dashFramesRemaining = 0;
     private Animator animator;
+    private Rigidbody2D rigidBody;
 
 	// Use this for initialization
 	void Start () {
         controls = playerNum == PlayerNumber.One ? playerOneControls : playerTwoControls;
         animator = GetComponent<Animator>();
+        rigidBody = GetComponent<Rigidbody2D>();
 	}
 	
 	// Update is called once per frame
@@ -47,22 +49,22 @@ public class PlayerMovement : MonoBehaviour {
         float speed = isDashing ? dashSpeed : movementSpeed;
         if (Input.GetKey(controls["Up"]))
         {
-            transform.Translate(Vector3.up * speed);
+            rigidBody.MovePosition(transform.position + Vector3.up * speed);
             isRunning = true;
         }
         if (Input.GetKey(controls["Down"]))
         {
-            transform.Translate(Vector3.down * speed);
+            rigidBody.MovePosition(transform.position + Vector3.down * speed);
             isRunning = true;
         }
         if (Input.GetKey(controls["Right"]))
         {
-            transform.Translate(Vector3.right * speed);
+            rigidBody.MovePosition(transform.position + Vector3.right * speed);
             isRunning = true;
         }
         if (Input.GetKey(controls["Left"]))
         {
-            transform.Translate(Vector3.left * speed);
+            rigidBody.MovePosition(transform.position + Vector3.left * speed);
             isRunning = true;
         }
 
