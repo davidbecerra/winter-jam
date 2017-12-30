@@ -27,14 +27,18 @@ public class PlayerMovement : MonoBehaviour {
     private Dictionary<string, KeyCode> controls;
     private bool isDashing = false;
     private int dashFramesRemaining = 0;
+    private Animator animator;
 
 	// Use this for initialization
 	void Start () {
         controls = playerNum == PlayerNumber.One ? playerOneControls : playerTwoControls;
+        animator = GetComponent<Animator>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
+        bool isRunning = false;
+
         if (Input.GetKeyDown(controls["Dash"]) && !isDashing)
         {
             isDashing = true;
@@ -44,19 +48,25 @@ public class PlayerMovement : MonoBehaviour {
         if (Input.GetKey(controls["Up"]))
         {
             transform.Translate(Vector3.up * speed);
+            isRunning = true;
         }
         if (Input.GetKey(controls["Down"]))
         {
             transform.Translate(Vector3.down * speed);
+            isRunning = true;
         }
         if (Input.GetKey(controls["Right"]))
         {
             transform.Translate(Vector3.right * speed);
+            isRunning = true;
         }
         if (Input.GetKey(controls["Left"]))
         {
             transform.Translate(Vector3.left * speed);
+            isRunning = true;
         }
+
+        animator.SetBool("IsRunning", isRunning);
 
         if (dashFramesRemaining > 0)
         {
