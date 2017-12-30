@@ -1,10 +1,13 @@
 fileFormatVersion: 2
 guid: 37046e4380a72814c896f9b4b6098686
-timeCreated: 1514606951
+timeCreated: 1514607513
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
     21300000: Dog Standing
+    21300002: Dog Run 1
+    21300004: Dog Run 2
+    21300006: Dog Run 3
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -47,7 +50,7 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 32
+  spritePixelsToUnits: 16
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -95,6 +98,48 @@ TextureImporter:
         y: 66
         width: 63
         height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Dog Run 1
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 70
+        width: 68
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Dog Run 2
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 38
+        width: 68
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Dog Run 3
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 4
+        width: 68
+        height: 29
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
