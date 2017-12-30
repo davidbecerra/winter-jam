@@ -1,10 +1,17 @@
 fileFormatVersion: 2
 guid: 0976c7468e9821b438e4c24c60ebb089
-timeCreated: 1514608922
+timeCreated: 1514609661
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
     21300000: Penguin Standing
+    21300002: penguin run 1
+    21300004: snopingos_spriteSheet_0
+    21300006: Penguin Run 2
+    21300008: snopingos_spriteSheet_1
+    21300010: Penguin Run 3
+    21300012: Penguin Loaded
+    21300014: Penguin Squat
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -66,6 +73,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    androidETC2FallbackOverride: 0
   - buildTarget: Standalone
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -75,6 +83,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    androidETC2FallbackOverride: 0
   - buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -84,6 +93,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -96,7 +106,77 @@ TextureImporter:
         width: 35
         height: 42
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: penguin run 1
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 53
+        width: 42
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Penguin Run 2
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 55
+        width: 42
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Penguin Run 3
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 53
+        width: 42
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Penguin Loaded
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 41
+        width: 35
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Penguin Squat
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 6
+        width: 36
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
