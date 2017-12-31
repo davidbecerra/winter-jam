@@ -40,36 +40,47 @@ public class PlayerMovement : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         bool isRunning = false;
+        Vector3 finalPosition = transform.position;
 
+        // Dashing
         if (Input.GetKeyDown(controls["Dash"]) && !isDashing)
         {
             isDashing = true;
             dashFramesRemaining = DASH_FRAMES;
         }
         float speed = isDashing ? dashSpeed : movementSpeed;
+
+        // Up/down movement
         if (Input.GetKey(controls["Up"]))
         {
-            rigidBody.MovePosition(transform.position + Vector3.up * speed);
+            finalPosition += Vector3.up * speed; 
             isRunning = true;
         }
-        if (Input.GetKey(controls["Down"]))
+        else if (Input.GetKey(controls["Down"]))
         {
-            rigidBody.MovePosition(transform.position + Vector3.down * speed);
+            finalPosition += Vector3.down * speed;
             isRunning = true;
         }
+
+        // Left/Right movement
         if (Input.GetKey(controls["Right"]))
         {
-            rigidBody.MovePosition(transform.position + Vector3.right * speed);
+            finalPosition += Vector3.right * speed;
             isRunning = true;
         }
-        if (Input.GetKey(controls["Left"]))
+        else if (Input.GetKey(controls["Left"]))
         {
-            rigidBody.MovePosition(transform.position + Vector3.left * speed);
+            finalPosition += Vector3.left * speed;
             isRunning = true;
         }
 
+        // Move to final position
+        rigidBody.MovePosition(finalPosition);
+
+        // Play moving animation
         animator.SetBool("IsRunning", isRunning);
 
+        // Dashing
         if (dashFramesRemaining > 0)
         {
             --dashFramesRemaining;
