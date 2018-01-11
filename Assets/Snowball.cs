@@ -18,8 +18,18 @@ public class Snowball : MonoBehaviour {
         rigidBody.MovePosition(transform.position + direction * speed);
 	}
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.layer == 8) Destroy(gameObject);
+    private void OnTriggerEnter2D(Collider2D collision) {
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Boundary")) {
+            if (collision.gameObject.CompareTag("Bouncable")) {
+                Vector3 normal = collision.gameObject.name == "Top Wall" ? Vector3.down : Vector3.up;
+                BounceOffWall(normal);
+            }
+            else
+                Destroy(gameObject);
+        }
+    }
+
+    private void BounceOffWall(Vector3 normal) {
+        direction.y *= -1f;
     }
 }

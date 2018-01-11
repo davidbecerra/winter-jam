@@ -23,7 +23,20 @@ public class PlayerMovement : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update ()
+    {
+        UpdateMovement();
+
+        //if (Input.GetKeyDown(controls.Throw))
+        //{
+        //    GameObject snowball = Instantiate(snowballPrefab, transform.position, Quaternion.identity);
+        //    snowball.GetComponent<Snowball>().direction = playerNum == PlayerNumber.One ? Vector3.right : Vector3.left;
+        //    snowball.GetComponent<Snowball>().source = playerNum;
+        //}
+    }
+
+    private void UpdateMovement()
+    {
         bool isRunning = false;
         Vector3 finalPosition = transform.position;
 
@@ -38,7 +51,7 @@ public class PlayerMovement : MonoBehaviour {
         // Up/down movement
         if (Input.GetKey(controls.Up))
         {
-            finalPosition += Vector3.up * speed; 
+            finalPosition += Vector3.up * speed;
             isRunning = true;
         }
         else if (Input.GetKey(controls.Down))
@@ -58,7 +71,7 @@ public class PlayerMovement : MonoBehaviour {
         {
             finalPosition += Vector3.right * speed;
             isRunning = true;
-            transform.localScale = new Vector3 (-Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+            transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
         }
 
 
@@ -77,13 +90,6 @@ public class PlayerMovement : MonoBehaviour {
         if (dashFramesRemaining == 0)
         {
             isDashing = false;
-        }
-
-        if (Input.GetKeyDown(controls.Throw))
-        {
-            GameObject snowball = Instantiate(snowballPrefab, transform.position, Quaternion.identity);
-            snowball.GetComponent<Snowball>().direction = playerNum == PlayerNumber.One ? Vector3.right : Vector3.left;
-            snowball.GetComponent<Snowball>().source = playerNum;
         }
     }
 
